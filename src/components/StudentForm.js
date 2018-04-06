@@ -1,6 +1,9 @@
 import React, {PureComponent} from 'react'
-import { addStudent } from '../actions/students'
-import { connect } from 'react-redux'
+import RaisedButton from 'material-ui/RaisedButton';
+
+const style = {
+  margin: 12,
+};
 
 class StudentForm extends PureComponent {
   state = {}
@@ -24,8 +27,8 @@ class StudentForm extends PureComponent {
       <form onSubmit={this.handleSubmit}>
 				<div>
 					<label htmlFor="name">Student fullName</label>
-					<input name="name" id="name" value={
-						this.state.name || ''
+					<input name="fullName" id="fullName" value={
+						this.state.fullName || ''
 					} onChange={ this.handleChange } />
 				</div>
 
@@ -36,7 +39,7 @@ class StudentForm extends PureComponent {
 					} onChange={ this.handleChange } />
 				</div>
 
-				<button type="submit">Save</button>
+        <RaisedButton type="submit" label="save" secondary={true} style={style}  />
 			</form>
     )
   }
