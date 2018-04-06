@@ -34,7 +34,7 @@ export default class EditEvaluationForm extends PureComponent {
 						this.state.remark || ''
 					} onChange={ this.handleChange } />
         </div>
-				<button type="submit">Save</button>
+				<button type="submit" >Save</button>
 			</form>
     )
   }
