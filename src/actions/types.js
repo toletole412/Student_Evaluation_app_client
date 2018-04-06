@@ -1,4 +1,4 @@
-//login, logout
+
 export const TEACHER_LOGIN_SUCCESS = 'TEACHER_LOGIN_SUCCESS'
 export const TEACHER_LOGIN_FAILED = 'TEACHER_LOGIN_FAILED'
 export const TEACHER_LOGOUT = 'TEACHER_LOGOUT'
@@ -6,6 +6,21 @@ export const TEACHER_LOGOUT = 'TEACHER_LOGOUT'
 export const FETCH_BATCHES = 'FETCH_BATCHES'
 export const FETCH_BATCH = 'FETCH_BATCH'
 
+export const CREATE_BATCH = 'CREATE_BATCH'
+
 export const ADD_STUDENT = 'ADD_STUDENT'
 export const EDIT_STUDENT = 'EDIT_STUDENT'
 export const DELETE_STUDENT = 'DELETE_STUDENT'
+export const FETCH_STUDENT = 'FETCH_STUDENT'
+
+export const ASK_A_QUESTION = 'ASK_A_QUESTION'
+
+export const DO_EVALUATION = 'DO_EVALUATION'
+export const EDIT_EVALUATION = 'EDIT_EVALUATION'
+
+export const FETCH_EVALUATION = 'FETCH_EVALUATION'
+export const DELETE_EVALUATION = 'DELETE_EVALUATION'
+
+export const GET_RED = 'GET_RED'
+export const GET_YELLOW = 'GET_YELLOW'
+export const GET_GREEN = 'GET_GREEN'
