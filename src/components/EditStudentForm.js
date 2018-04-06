@@ -34,7 +34,7 @@ export default class EditStudentForm extends PureComponent {
 					} onChange={ this.handleChange } />
 				</div>
 
-				<button type="submit">edit</button>
+				<button type="submit" onClick={_=>window.location.reload()}>edit</button>
 			</form>
     )
   }
