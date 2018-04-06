@@ -1,14 +1,24 @@
 import React, {PureComponent} from 'react'
 import {connect} from 'react-redux'
-import { fetchBatches } from '../actions/students'
+import { fetchBatches, createBatch } from '../actions/students'
+import BatchForm from '../components/BatchForm'
 import PropTypes from 'prop-types'
+import RaisedButton from 'material-ui/RaisedButton';
+import AppBar from 'material-ui/AppBar';
 import './Styles.css';
+
+
+
+const style = {
+  margin: 12,
+};
 
 
 
 class Batches extends PureComponent {
   static propTypes = {
-    fetchBatches: PropTypes.func.isRequired
+    fetchBatches: PropTypes.func.isRequired,
+    createBatch: PropTypes.func.isRequired
   }
 
 
@@ -16,7 +26,9 @@ class Batches extends PureComponent {
     this.props.fetchBatches()
   }
 
-
+  createBatch = batch => {
+    this.props.createBatch(batch)
+  }
 
   renderBatches() {
     const { batchesInfo } = this.props
@@ -25,17 +37,14 @@ class Batches extends PureComponent {
     return batchesInfo.map(batch => {
       return (
 
-          <div>
+         <div>
               <div class="articles_header">
                 <h1 class="articles_title">
                     Batch #{batch.id}
                 </h1>
-                <button
-                  onClick={
-                    _ => window.location.href=`/batches/${batch.id}`
-                  }>
-                  details
-                  </button>
+                <RaisedButton label="details" primary={true} style={style} onClick={
+                  _ => window.location.href=`/batches/${batch.id}`
+                } />
               </div>
             <div class="articles_body">
               <div class="contents">
@@ -55,31 +64,21 @@ class Batches extends PureComponent {
   render() {
 
     return (
-      <div>
-          <div style={{backgroundColor: "#f9f4f7", overflow: "scroll", color: 'black'}}
-                 key={"b"}
-                 _grid={{i: 'b',
-                         x: 1,
-                         y: 0,
-                         w: 3,
-                         h: 2,
-                         minW: 2,
-                         maxW: 4}}>
-            <div class="wrapper">
-              <div class="home">
-                    <div class="articles">
-                        <ul class="articles_list clear">
-                        <li>
-                          <article class="articles_contents">
-                          {this.renderBatches()}
-                          </article>
-                        </li>
-                        </ul>
-                    </div>
-            </div>
-          </div>
+
+      <body>
+      <AppBar
+        title="Batches"
+        iconClassNameRight="muidocs-icon-navigation-expand-more"
+      />
+        <div class="container">
+          <BatchForm onSubmit={this.createBatch} />
+              <li>
+                <article class="articles_contents">
+                  {this.renderBatches()}
+                </article>
+              </li>
         </div>
-    </div>
+      </body>
     );
   }
 }
@@ -89,4 +88,4 @@ const mapStateToProps = (state) => ({
   currentTeacher: state.currentTeacher
 })
 
-export default connect(mapStateToProps, { fetchBatches })(Batches)
+export default connect(mapStateToProps, { fetchBatches, createBatch })(Batches)
