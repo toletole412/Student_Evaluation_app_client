@@ -39,7 +39,13 @@ class StudentForm extends PureComponent {
 					} onChange={ this.handleChange } />
 				</div>
 
-        <RaisedButton type="submit" label="save" secondary={true} style={style}  />
+        <RaisedButton
+          type="submit"
+          label="save"
+          secondary={true}
+          style={style}  
+          onClick={_=>window.location.reload()}
+        />
 			</form>
     )
   }
