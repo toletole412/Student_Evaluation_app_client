@@ -74,9 +74,7 @@ class Evaluation extends PureComponent {
           <p>edit student Info</p>
             <EditStudentForm onSubmit={this.editStudent}/>
             <button
-                onClick={
-                  this.deleteStudent
-                }>
+                onClick={ this.deleteStudent }>
                 delete student
             </button>
 
