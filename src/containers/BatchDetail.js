@@ -50,7 +50,7 @@ class BatchDetail extends PureComponent {
             batch.students.map(student => (
           <tr>
             <td width="30%">{student.fullName}</td>
-            <td width="50%"><img src={student.picture} /></td>
+            <td width="50%"><img src={student.picture} alt="student"/></td>
             <td width="100%">{student.evaluations
               .sort()
               .slice(-1)
