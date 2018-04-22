@@ -49,7 +49,7 @@ class Evaluation extends PureComponent {
           </tr>
           <tr>
             <td width="5%">{student.fullName}</td>
-            <td width="10%"><img src={student.picture} /></td>
+            <td width="10%"><img alt="student" src={student.picture} /></td>
 
                 <table>
                 <th>date</th>

@@ -6,9 +6,6 @@ import { connect } from 'react-redux'
 
 
 
-const style = {
-  margin: 5,
-};
 
 
 class EditEvaluation extends PureComponent {
@@ -27,7 +24,6 @@ class EditEvaluation extends PureComponent {
 
 
   render() {
-    const { evaluation } = this.props
 
 
     return (

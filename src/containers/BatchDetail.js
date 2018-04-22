@@ -108,7 +108,7 @@ class BatchDetail extends PureComponent {
             style={style}
             onClick={this.askQuestion} />
           <span>{question.map(q => q.fullName)} </span>
-          <img src={question.map(q => q.picture)} />
+          <img alt="random" src={question.map(q => q.picture)} />
 
         </table>
         </div>
